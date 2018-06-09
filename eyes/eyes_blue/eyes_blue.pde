@@ -1,4 +1,4 @@
-int itemSize = 60;
+int itemSize = 57;
 int eyeRad = 45;
 int eye = 20;
 int count = 50;
@@ -13,7 +13,8 @@ int[] colors = new int[]{
 };
 
 void setup() {
-  background(0);
+  background(170, 232, 255);
+  smooth();
   size(1200, 1000);  // set size to that of the image
   colorsR = new int[count*count];
   for(int i = 0; i < count*count; i++){
@@ -28,7 +29,7 @@ void draw(){
          printEye(i*itemSize, j*itemSize, i*count + j);
      }
    }
-   saveFrame("line-######.png");
+   //saveFrame("line-######.png");
 }
 
 void printEye(int xPos, int yPost, int index){

@@ -1,4 +1,4 @@
-int itemSize = 60;
+int itemSize = 57;
 int eyeRad = 45;
 int eye = 20;
 int count = 50;
@@ -13,7 +13,8 @@ int[] colors = new int[]{
 };
 
 void setup() {
-  background(0);
+  background(255);
+  smooth();
   size(1200, 1000);  // set size to that of the image
   colorsR = new int[count*count];
   for(int i = 0; i < count*count; i++){
@@ -28,11 +29,11 @@ void draw(){
          printEye(i*itemSize, j*itemSize, i*count + j);
      }
    }
-   saveFrame("line-######.png");
+   //saveFrame("line-######.png");
 }
 
 void printEye(int xPos, int yPost, int index){
-    fill(255);
+    fill(255, 253, 206);
     ellipse(xPos + itemSize/2 + 2, yPost + itemSize/2 + 2, eyeRad, eyeRad);
     double path = calculate(xPos + itemSize/2 + 2, yPost + itemSize/2, mouseX, mouseY);
     double sn = Math.abs(yPost + itemSize/2 + 2 - mouseY) / path;

@@ -1,8 +1,9 @@
-int itemSize = 60;
+int itemSize = 57;
 int eyeRad = 45;
 int eye = 20;
 int count = 50;
 int[] colorsR;
+PImage img;
 
 int[] colors = new int[]{
   color(255, 0, 0),
@@ -13,22 +14,26 @@ int[] colors = new int[]{
 };
 
 void setup() {
-  background(0);
+  background(186, 255, 222);
+  smooth();
   size(1200, 1000);  // set size to that of the image
   colorsR = new int[count*count];
   for(int i = 0; i < count*count; i++){
     colorsR[i] = colors[int(random(5))];
   }
+  img = loadImage("muh.png");
 }
 
 void draw(){
+    background(186, 255, 222);
    for(int i = 0; i < count; i++){
      for(int j = 0; j < count; j++){
          strokeWeight(2);
          printEye(i*itemSize, j*itemSize, i*count + j);
      }
    }
-   saveFrame("line-######.png");
+   image(img, mouseX, mouseY, 20, 20);
+   //saveFrame("line-######.png");
 }
 
 void printEye(int xPos, int yPost, int index){
